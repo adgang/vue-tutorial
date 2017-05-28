@@ -42,8 +42,42 @@ Magically the browser will change its welcome message in a split second. Vue's t
 
 ## 4. Writing a new component
 
-Now lets try and hit the page `http://localhost:18080/#/about` in browser. Obviously there is no route mapped to the path. So all you see would be the Vue logo. This becomes apparent from the check list of files above. The router-view is not able to render anything for this path, so the page only shows the logo which is rendered by the App directly.
+  Now lets try and hit the page `http://localhost:18080/#/about` in browser. Obviously there is no route mapped to the path. So all you see would be the Vue logo. This becomes apparent from the check list of files above. The router-view is not able to render anything for this path, so the page only shows the logo which is rendered by the App directly.
 
+Now its time to write a new component which will render something when we hit the about url `/about`. If you had examined the files in the above checklist, it is easy to guess what to change. The steps are simple:
+
+#### a. Assign a route:
+
+Add a new route in `src/route/index.js`
+```
+ {
+   path: '/about',
+   name: 'About',
+   component: About
+ }
+```
+ #### b. Write a new component:
+ Obviously the router will not be able to find the component called About. So we write a new file called About.vue in `src/components` with the following contents.
+
+ ```
+ <template>
+   <div class="about">
+     <h1>{{ msg }}</h1>
+   </div>
+ </template>
+ <script>
+ export default {
+   name: 'about',
+   data () {
+     return {
+       msg: 'This is the About page. Really its just a fun experimental app'
+     }
+   }
+ }
+ </script>
+ ```
+
+Now the `localhost:18080/#/about` page shows the line about our app.
 
 
 
