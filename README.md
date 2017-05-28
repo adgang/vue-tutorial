@@ -1,6 +1,28 @@
 # vue-tutorial
 
-> A sample step by step, commit by commit Vue tutorial
+> A sample step by step, commit by commit Vue tutorial. We are really only looking to learn writing a simple app using vue-cli. The following are the things we demo in each commit.
+
+1. vue-cli installation
+2. Creating a vue project
+3. Getting the root controller or the controller on path `/` running with an App.
+4. Writing a simple Component and assign a route to it.
+5. Writing two components and using composition(using one component in another).
+
+## 1. vue-cli installation
+First, we global install vue-cli like so:
+> npm install -g vue-cli
+
+Depending on your npm setup, you might need sudo on above command.
+
+## 2. Create a vue project
+> vue init webpack <project-name>
+
+I chose the webpack template here. There are other options available. The init command creates a Vue app and a component called Hello, with a route path `/` assigned to it. You can run
+> npm run dev
+
+to check that the app is running.
+
+
 
 ## Build Setup
 
