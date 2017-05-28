@@ -20,7 +20,7 @@ Depending on your npm setup, you might need sudo on above command.
 I chose the webpack template here. There are other options available. The init command creates a Vue app and a component called Hello, with a route path `/` assigned to it. You can run
 > npm run dev
 
-to check that the app is running.
+to check that the app is running. Be sure to run `npm install` before running the app. Change the port in `config/index.js` if necessary. I changed it to 18080.
 
 
 
