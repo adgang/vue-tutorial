@@ -14,7 +14,7 @@ First, we global install vue-cli like so:
 
 Depending on your npm setup, you might need sudo on above command.
 
-## 2. Create a vue project
+## 2. Create a Vue project
 > vue init webpack <project-name>
 
 I chose the webpack template here. There are other options available. The init command creates a Vue app and a component called Hello, with a route path `/` assigned to it. You can run
@@ -40,8 +40,9 @@ Let us customize stuff a bit. Let's replace the welcome message in Hello.vue wit
 
 Magically the browser will change its welcome message in a split second. Vue's tooling takes care of the update as long as `npm run dev` is running. The update is definitely way faster than in Angular.
 
+## 4. Writing a new component
 
-
+Now lets try and hit the page `http://localhost:18080/#/about` in browser. Obviously there is no route mapped to the path. So all you see would be the Vue logo. This becomes apparent from the check list of files above. The router-view is not able to render anything for this path, so the page only shows the logo which is rendered by the App directly.
 
 
 
