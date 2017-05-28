@@ -22,6 +22,28 @@ I chose the webpack template here. There are other options available. The init c
 
 to check that the app is running. Be sure to run `npm install` before running the app. Change the port in `config/index.js` if necessary. I changed it to 18080.
 
+## 3. Getting the App working
+
+To understand how the app is working check the following files in that order.
+```
+index.html => The single page application's, well, single page.
+src/main.js => The main javascript file which creates a Vue object(App) and binds it to a div on the page. Also defines where to find routes(./router).
+src/App.vue => The vue file which defines the template and logic to inject page specific stuff based on path. The `router-view` element will inject the stuff from the relevant Vue component.
+src/router/index.js => Defines routes mapping Controllers to paths
+src/components/Hello.vue => The Hello component which renders the welcome message and all the links.
+```
+
+First run `npm run dev`
+Keep `localhost:18080` open on a browser.
+Let us customize stuff a bit. Let's replace the welcome message in Hello.vue with:
+>   Welcome to My Vue.js Tutorial App
+
+Magically the browser will change its welcome message in a split second. Vue's tooling takes care of the update as long as `npm run dev` is running. The update is definitely way faster than in Angular.
+
+
+
+
+
 
 
 ## Build Setup
