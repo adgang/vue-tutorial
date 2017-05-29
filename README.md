@@ -79,6 +79,32 @@ Add a new route in `src/route/index.js`
 
 Now the `localhost:18080/#/about` page shows the line about our app. Why is the hideous # in our path? Wait, is it not possible to get clean old path like `localhost:18080/about` for our page?! For that just make the router use [history mode](https://router.vuejs.org/en/essentials/history-mode.html). But history mode comes with its own quirks. Be sure to stich up things for using such paths. We will continue our tutorial in the default mode(called hash mode after the hideous hash).
 
+## 5. Composing Components
+Vue offers amazingly powerful ways to compose components(use one component in another). It's simplicity is like a fresh breathe of air coming from Angular world. Here let us try using the About component in our home page component(Hello component). All we have to do is tell Hello component that we are going to use the About component from so-and-so file using a custom element(similar to directive in Angular). And the simply use the custom element in the component template.
+
+So in the script section of Hello.vue, we import About and include it in components used by Hello like so:
+```
+<script>
+import About from './About'
+export default {
+  name: 'hello',
+  components: { 'about': About },
+  data () {
+  ...
+</script>
+```
+Now we can use <about> element in Hello's template as many times as we want:
+```
+<template>
+  <div class="hello">
+    ...
+    <about></about>
+    <about></about>
+  </div>
+</template>
+```
+And we already can see two identical about messages.
+
 
 
 

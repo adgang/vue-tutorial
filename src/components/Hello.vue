@@ -17,12 +17,16 @@
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
+    <about></about>
+    <about></about>
   </div>
 </template>
 
 <script>
+import About from './About'
 export default {
   name: 'hello',
+  components: { 'about': About },
   data () {
     return {
       msg: 'Welcome to My Vue.js Tutorial App'
