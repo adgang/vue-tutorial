@@ -15,7 +15,9 @@ First, we global install vue-cli like so:
 Depending on your npm setup, you might need sudo on above command.
 
 ## 2. Create a Vue project
-> vue init webpack <project-name>
+```
+vue init webpack <project-name>
+```
 
 I chose the webpack template here. There are other options available. The init command creates a Vue app and a component called Hello, with a route path `/` assigned to it. You can run
 > npm run dev
