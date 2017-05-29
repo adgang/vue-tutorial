@@ -103,9 +103,37 @@ Now we can use <about> element in Hello's template as many times as we want:
   </div>
 </template>
 ```
-And we already can see two identical about messages.
+And we already can see two identical `about` messages. But they are both showing the same boring message. What is the point of having subcomponents(called child components in documentation) if they can only ever bind to same data? It's like a class whose instances have all the same data. This is why Vue provides props.
 
+On a small detour, the Vue philosophy is [props down, events up](https://vuejs.org/v2/guide/components.html#Composing-Components) which means child components receive props from parents and then emit events back to parents. Thats it! A child cannot(or rather should not) access parent's data.
 
+So now we have to make our parent Hello component set props of About child components. Two steps:
+
+a. First, `About` component should explicitly declare the props it accepts. In About.vue, lets make `msg` a prop.
+```
+<script>
+export default {
+  name: 'about',
+  props: ['msg'],
+  data () {
+  ...
+}
+</script>
+```
+
+b. The parent Hello component should pass on the prop values for each child component. In Hello.vue where we show about component, pass on msg as needed.
+```
+<template>
+  <div class="hello">
+    ...
+    <about msg='This is about the first child component'></about>
+    <about msg='This is about the second child'></about>
+    <about></about>
+  </div>
+</template>
+```
+
+That's it we have resused a component within another.
 
 
 ## Build Setup
