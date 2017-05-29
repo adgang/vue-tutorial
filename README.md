@@ -162,3 +162,22 @@ npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## A Note on File Structure
+Vue does not need cli and the file structure that it creates. We could simply source the vue.js from build or some CDN and write our own javascript to spin off Vue objects with routes. It is as simple as:
+```
+<script src='http://some-cdn/vue.js'></script>
+<script>
+// some components
+// some router code
+new Vue({
+    el: '#app',
+    // router, template etc ...
+})
+</script>
+```
+
+Vue is not opinionated about the file organisation(unlike Angular where you better put components as suggested by the docs or face a hard time wiring them together). `vue-cli` and hence this tutorial is.
+
+## End Note
+I have recently tried learning Vue 2.0 and wanted to see how the framework allows certain very specific things. Like, define a route, create component and use composition. Though I am satisfied with the framework beyond expectation, I faced a few question marks which blocked my way. These surprises probably should not waste time of others. This tutorial is for such friends who want to explore Vue fast from the basics they already know.
