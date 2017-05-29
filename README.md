@@ -77,7 +77,8 @@ Add a new route in `src/route/index.js`
  </script>
  ```
 
-Now the `localhost:18080/#/about` page shows the line about our app.
+Now the `localhost:18080/#/about` page shows the line about our app. Why is the hideous # in our path? Wait, is it not possible to get clean old path like `localhost:18080/about` for our page?! For that just make the router use [history mode](https://router.vuejs.org/en/essentials/history-mode.html). But history mode comes with its own quirks. Be sure to stich up things for using such paths. We will continue our tutorial in the default mode(called hash mode after the hideous hash).
+
 
 
 
